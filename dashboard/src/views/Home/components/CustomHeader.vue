@@ -4,11 +4,11 @@
 
       <div class="flex items-center justify-between py-10">
         <div class="w-28 lg:w-36">
-          <img src="../../assets/images/logo_white.png" class="w-full" alt="logo">
+          <img src="../../../assets/images/logo_white.png" class="w-full" alt="logo">
         </div>
         <div class="flex">
-          <button class="px-6 py-2 font-bold rounded-full text-white focus:outline-none">Crie uma conta</button>
-          <button class="px-6 py-2 font-bold bg-white rounded-full text-brand-main focus:outline-none">Entrar</button>
+          <button @click="() => emit('create-account')" class="px-6 py-2 font-bold rounded-full text-white focus:outline-none">Crie uma conta</button>
+          <button @click="() => emit('login')" class="px-6 py-2 font-bold bg-white rounded-full text-brand-main focus:outline-none">Entrar</button>
         </div>
       </div>
 
@@ -31,7 +31,9 @@
 </template>
 <script>
 export default {
-
+  setup (_, { emit }) {
+    return { emit }
+  }
 }
 </script>
 <style lang="postcss" scoped>
@@ -46,7 +48,7 @@ export default {
 
 @media (min-width: 640px) {
   .header-group {
-    background-image: url("../../assets/images/blue_balloons.png");
+    background-image: url("../../../assets/images/blue_balloons.png");
     background-size: 628px;
     background-position: 90% 100%;
     background-repeat: no-repeat;
